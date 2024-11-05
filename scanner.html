@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>PeninsulaPatrol - Scanner</title>
-		<link rel="manifest" href="/manifest.json">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./scanner-style.css">
-        <script src="./html5-qrcode.min.js"></script>
-        <script type="module">
-            import App from "./scanner-app.js";
-			const app = new App();
-			app.start();
-        </script>
-    </head>
-    <body>
-        <div id="feed" width="100%"></div>
-        <button id="pwd-edit"><ion-icon name="pencil"></ion-icon><ion-icon name="key"></ion-icon></button>
-        <div id="prompt">
-            <h1 id="message">Submitting</h1>
-            <h3 id="content"></h3>
-            <button id="finish"><h1>Finish</h1></button>
-        </div>
-        <script type="module" src="./ionicons/dist/ionicons/ionicons.esm.js"></script>
-        <script type="module" nomodule="true" src="./ionicons/dist/ionicons/ionicons.js"></script>
-    </body>
+  <head>
+    <title>PeninsulaPatrol - Scanner</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./scanner-style.css" />
+    <script src="./html5-qrcode.min.js"></script>
+    <script type="module">
+      import App from "./scanner-app.js";
+      const app = new App();
+      app.start();
+    </script>
+  </head>
+  <body>
+    <div id="feed" width="100%"></div>
+    <button id="pwd-edit">
+      <ion-icon name="pencil"></ion-icon><ion-icon name="key"></ion-icon>
+    </button>
+    <div id="prompt">
+      <h1 id="message">Submitting</h1>
+      <h3 id="content"></h3>
+      <button id="finish"><h1>Finish</h1></button>
+    </div>
+    <script
+      type="module"
+      src="./ionicons/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      type="module"
+      nomodule="true"
+      src="./ionicons/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

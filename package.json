@@ -1,16 +1,16 @@
 {
-    "name": "peninsula-patrol",
-    "productName": "Peninsula Patrol",
-    "version": "2024.0.0",
-    "description": "Peninsula Patrol scouting app",
-    "author": {
-        "name": "Jeffrey Fan",
-        "email": "jeffrey.fanjf@gmail.com"
-    },
-    "main": "main.js",
-    "scripts": {
-        "start": "npx serve . --ssl-cert ./server.crt --ssl-key ./server.key -p 60361",
-        "start-insecure": "npx serve . -p 60362",
-        "start-both": "npm start & npm run start-insecure"
-    }
+  "name": "peninsula-patrol",
+  "productName": "Peninsula Patrol",
+  "version": "2024.0.0",
+  "description": "Peninsula Patrol scouting app",
+  "author": {
+    "name": "Jeffrey Fan",
+    "email": "jeffrey.fanjf@gmail.com"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "npx serve . --ssl-cert ./server.crt --ssl-key ./server.key -p 60361",
+    "start-insecure": "npx serve . -p 60362",
+    "start-both": "npm start & npm run start-insecure"
+  }
 }

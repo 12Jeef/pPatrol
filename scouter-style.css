@@ -1,339 +1,339 @@
 :root {
-    --TOP: 50px;
+  --TOP: 50px;
 }
 
 button {
-    background-color: var(--v4);
-    color: var(--fg);
+  background-color: var(--v4);
+  color: var(--fg);
 }
 button:not(:disabled):active {
-    background-color: var(--v6);
+  background-color: var(--v6);
 }
 button:disabled {
-    background-color: var(--v2);
-    color: var(--v8);
+  background-color: var(--v2);
+  color: var(--v8);
 }
 
 button[light] {
-    background-color: var(--v6);
+  background-color: var(--v6);
 }
 button[light]:not(:disabled):active {
-    background-color: var(--v8);
+  background-color: var(--v8);
 }
 button[light]:disabled {
-    background-color: var(--v4);
+  background-color: var(--v4);
 }
 
 button[special],
 button[success],
 button[fail] {
-    color: #fff;
+  color: #fff;
 }
 button[special]:not(:disabled):active,
 button[success]:not(:disabled):active,
 button[fail]:not(:disabled):active {
-    background-color: var(--fg);
-    color: var(--bg);
+  background-color: var(--fg);
+  color: var(--bg);
 }
 button[special]:disabled,
 button[success]:disabled,
 button[fail]:disabled {
-    color: #fff8;
+  color: #fff8;
 }
 
 button[special] {
-    background-color: var(--a);
+  background-color: var(--a);
 }
 button[special]:disabled {
-    background-color: var(--aa);
+  background-color: var(--aa);
 }
 
 button[success] {
-    background-color: var(--g3);
+  background-color: var(--g3);
 }
 button[success]:disabled {
-    background-color: var(--g2);
+  background-color: var(--g2);
 }
 
 button[fail] {
-    background-color: var(--r3);
+  background-color: var(--r3);
 }
 button[fail]:disabled {
-    background-color: var(--r2);
+  background-color: var(--r2);
 }
 
 #header {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    width: 100%;
-    height: var(--TOP);
-    padding: 1em;
-    overflow: hidden;
+  width: 100%;
+  height: var(--TOP);
+  padding: 1em;
+  overflow: hidden;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
 
-    background-color: var(--a);
-    color: #fff;
+  background-color: var(--a);
+  color: #fff;
 
-    font-weight: 700;
+  font-weight: 700;
 }
 #header > button {
-    aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1;
 
-    border-radius: 100%;
+  border-radius: 100%;
 
-    font-size: 2em;
+  font-size: 2em;
 }
 #header > h1 {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 #header > h1 > span {
-    color: var(--fga);
+  color: var(--fga);
 }
 #header > h2.time {
-    font-family: monospace;
+  font-family: monospace;
 }
 #header > h3 > span {
-    opacity: 50%;
+  opacity: 50%;
 }
 #header > * {
-    min-width: max-content;
+  min-width: max-content;
 }
 
 .page {
-    position: absolute;
-    top: var(--TOP);
-    left: 0%;
+  position: absolute;
+  top: var(--TOP);
+  left: 0%;
 
-    width: 100%;
-    height: calc(100% - var(--TOP));
-    padding: 20px;
-    overflow: hidden;
+  width: 100%;
+  height: calc(100% - var(--TOP));
+  padding: 20px;
+  overflow: hidden;
 
-    display: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 20px;
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 20px;
 
-    background-color: var(--bg);
+  background-color: var(--bg);
 }
 .page.this {
-    display: flex;
+  display: flex;
 }
 
 #settings {
-    gap: 0px;
+  gap: 0px;
 }
 #settings > #setting-event {
-    width: 100%;
-    margin: 0px;
-    padding: 10px;
+  width: 100%;
+  margin: 0px;
+  padding: 10px;
 
-    background-color: var(--a);
-    color: #fff;
-    border-radius: 10px;
+  background-color: var(--a);
+  color: #fff;
+  border-radius: 10px;
 }
 #settings > #setting-event > span:nth-child(2) {
-    margin-left: 10px;
+  margin-left: 10px;
 
-    opacity: 50%;
+  opacity: 50%;
 
-    font-weight: 500;
+  font-weight: 500;
 }
 #settings > .field {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  gap: 20px;
 }
 #settings > .field > div,
 #settings > #setting-left {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    padding: 10px;
+  width: 100%;
+  padding: 10px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 
-    text-align: center;
+  text-align: center;
 }
 #settings > #setting-left {
-    background-color: var(--b3);
-    color: #fff;
+  background-color: var(--b3);
+  color: #fff;
 }
 #settings > .field > div:has(> input:disabled) {
-    background-color: var(--v2);
-    color: var(--v8);
+  background-color: var(--v2);
+  color: var(--v8);
 }
 #settings > #setting-left:has(> input:disabled) {
-    background-color: var(--b2);
-    color: var(--v8);
+  background-color: var(--b2);
+  color: var(--v8);
 }
 #settings > .field > div:has(> input:checked) {
-    background-color: var(--g4);
-    color: #fff;
+  background-color: var(--g4);
+  color: #fff;
 }
 #settings > #setting-left:has(> input:checked) {
-    background-color: var(--r3);
+  background-color: var(--r3);
 }
 #settings > #setting-left:has(> input:disabled:checked) {
-    background-color: var(--r2);
+  background-color: var(--r2);
 }
 #settings > .field > div:has(> input:disabled:checked),
 #settings > #setting-left:has(> input:disabled:checked) {
-    background-color: var(--g2);
-    color: #fff8;
+  background-color: var(--g2);
+  color: #fff8;
 }
 #settings > .field > div:has(> input:not(:disabled):active),
 #settings > #setting-left:has(> input:not(:disabled):active) {
-    background-color: var(--fg) !important;
-    color: var(--bg) !important;
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
 }
 #settings > .field > div > input,
 #settings > #setting-left > input {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    opacity: 0%;
+  opacity: 0%;
 }
 #settings > .field > div > h1 {
-    margin: 0px;
+  margin: 0px;
 }
 #settings > .field > div > h1::before {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 #settings > .field > #setting-flipx > h1::before {
-    content: "Flip Horizontally";
+  content: "Flip Horizontally";
 }
 #settings > .field > #setting-flipy > h1::before {
-    content: "Flip Vertically";
+  content: "Flip Vertically";
 }
 #settings > .field > div:has(> input:checked) > h1::before {
-    text-decoration: none;
+  text-decoration: none;
 }
 #settings > .match .setting-id {
-    align-self: stretch;
+  align-self: stretch;
 
-    background-color: transparent;
-    color: var(--fg);
+  background-color: transparent;
+  color: var(--fg);
 }
 #settings > #setting-left > h1 {
-    margin: 0px;
+  margin: 0px;
 }
 #settings > #setting-left > h1::before {
-    content: "Blue";
+  content: "Blue";
 }
 #settings > #setting-left:has(> input:checked) > h1::before {
-    content: "Red";
+  content: "Red";
 }
 #settings > button {
-    margin-top: 15px;
-    padding: 0.5em;
+  margin-top: 15px;
+  padding: 0.5em;
 
-    gap: 0.5em;
+  gap: 0.5em;
 
-    border-radius: 10px;
-    
-    font-size: 2em;
-    font-weight: 700;
+  border-radius: 10px;
+
+  font-size: 2em;
+  font-weight: 700;
 }
 
 #navigator {
-    padding: 0px;
+  padding: 0px;
 
-    gap: 0em;
+  gap: 0em;
 }
 #navigator > header {
-    padding: 20px;
-    padding-bottom: 0.25em;
+  padding: 20px;
+  padding-bottom: 0.25em;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    gap: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 1em;
 }
 #navigator > header button {
-    min-width: 10em;
-    padding: 0.25em 0.5em;
+  min-width: 10em;
+  padding: 0.25em 0.5em;
 
-    border-radius: 0.25rem;
+  border-radius: 0.25rem;
 
-    font-size: inherit;
-    font-weight: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 #navigator > header > h1 {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    margin: 0em;
+  margin: 0em;
 }
 #navigator > header > h3 {
-    position: relative;
+  position: relative;
 }
 #navigator > header > h3 > button {
-    min-width: 15em;
+  min-width: 15em;
 
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 #navigator > header > h3 > div {
-    z-index: 1;
+  z-index: 1;
 
-    position: absolute;
-    top: 100%;
-    left: 0%;
+  position: absolute;
+  top: 100%;
+  left: 0%;
 
-    min-width: 100%;
-    max-height: 50vh;
-    overflow: auto;
+  min-width: 100%;
+  max-height: 50vh;
+  overflow: auto;
 
-    display: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
 
-    border-radius: 0.25rem;
+  border-radius: 0.25rem;
 }
 #navigator > header > h3 > div:has(> button:active),
 #navigator > header > h3 > button:focus + div {
-    display: flex;
+  display: flex;
 }
 #navigator > header > h3 > div > button {
-    justify-content: flex-start;
+  justify-content: flex-start;
 
-    border-radius: 0em;
+  border-radius: 0em;
 }
 #navigator > header > h3 button:active {
-    filter: brightness(1.5);
+  filter: brightness(1.5);
 }
 /* #navigator > header > h3 button.other {
     background-color: var(--b3);
@@ -347,1127 +347,1134 @@ button[fail]:disabled {
     color: var(--bg);
 } */
 #navigator > .content {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    max-height: 100%;
-    padding: 20px;
-    overflow: auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  padding: 20px;
+  overflow: auto;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 20px;
 }
 #navigator > .content > button,
 .match {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    
-    background-color: var(--v4);
-    border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
 
-    font-size: 1.1em;
-    font-weight: 500;
+  background-color: var(--v4);
+  border-radius: 10px;
+
+  font-size: 1.1em;
+  font-weight: 500;
 }
 #navigator > .content > button > :first-child,
 .match > :first-child {
-    overflow: hidden;
+  overflow: hidden;
 
-    border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
 }
 #navigator > .content > button > :last-child,
 .match > :last-child {
-    overflow: hidden;
+  overflow: hidden;
 
-    border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10px 10px 0px;
 }
 #navigator > .content > button:not(:disabled):active,
 .match:not(:disabled):active {
-    background-color: var(--v6);
+  background-color: var(--v6);
 }
 #navigator > .content > button > .id,
 .match > .id {
-    padding: 10px 20px;
+  padding: 10px 20px;
 
-    min-width: 2.5em;
+  min-width: 2.5em;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
 }
 #navigator > .content > button > .teams,
 .match > .teams {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
 }
-@media screen and (orientation:portrait) {
-    #navigator > .content > button > .teams,
-    .match > .teams {
-        flex-direction: column;
-    }
+@media screen and (orientation: portrait) {
+  #navigator > .content > button > .teams,
+  .match > .teams {
+    flex-direction: column;
+  }
 }
 #navigator > .content > button > .teams > .red,
 #navigator > .content > button > .teams > .blue,
 .match > .teams > .red,
 .match > .teams > .blue {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
 
-    color: #fff;
+  color: #fff;
 }
 #navigator > .content > button > .teams > .red > *,
 #navigator > .content > button > .teams > .blue > *,
 .match > .teams > .red > *,
 .match > .teams > .blue > * {
-    min-width: 3.75em;
-    margin: 0px;
-    padding: 10px 20px;
+  min-width: 3.75em;
+  margin: 0px;
+  padding: 10px 20px;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
 }
 #navigator > .content > button > .teams > .red > *.this,
 #navigator > .content > button > .teams > .blue > *.this,
 .match > .teams > .red > *.this,
 .match > .teams > .blue > *.this {
-    background-color: var(--fg) !important;
-    color: var(--bg) !important;
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
 }
 #navigator > .content > button > .teams > .red,
 .match > .teams > .red {
-    background-color: var(--r3);
+  background-color: var(--r3);
 }
 #navigator > .content > button:not(:disabled):active > .teams > .red,
 .match:not(:disabled):active > .teams > .red {
-    background-color: var(--r4);
+  background-color: var(--r4);
 }
 #navigator > .content > button > .teams > .blue,
 .match > .teams > .blue {
-    background-color: var(--b3);
+  background-color: var(--b3);
 }
 #navigator > .content > button:not(:disabled):active > .teams > .blue,
 .match:not(:disabled):active > .teams > .blue {
-    background-color: var(--b4);
+  background-color: var(--b4);
 }
 
 #preauto {
-    flex-direction: row;
+  flex-direction: row;
 }
 #preauto > .field {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    padding: 20px;
+  padding: 20px;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 }
-@media screen and (orientation:portrait) {
-    #preauto {
-        flex-direction: column;
-    }
-    #preauto > .field {
-        flex-basis: 51.5%;
-    }
+@media screen and (orientation: portrait) {
+  #preauto {
+    flex-direction: column;
+  }
+  #preauto > .field {
+    flex-basis: 51.5%;
+  }
 }
 #preauto > .field > #preauto-field {
-    position: relative;
+  position: relative;
 
-    height: 100%;
+  height: 100%;
 
-    background-image: url(./field.png);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
+  background-image: url(./field.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 }
 #preauto > .field > #preauto-field > #preauto-robot-pos {
-    position: absolute;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  transform: translate(-50%, -50%);
 
-    background-color: var(--fga);
-    border: 5px solid var(--fg);
+  background-color: var(--fga);
+  border: 5px solid var(--fg);
 }
 #preauto > .content {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
 }
 #preauto > .content > div {
-    position: relative;
+  position: relative;
 }
 #preauto > .content > div > #preauto-robot {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 #preauto > .content > div > #preauto-robot::before {
-    content: "▼";
+  content: "▼";
 
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
 
-    font-size: 2em;
+  font-size: 2em;
 }
 #preauto > .content > div > #preauto-robot:focus::before {
-    content: "▲";
+  content: "▲";
 }
 #preauto > .content > div > #preauto-robot:disabled:before {
-    content: "";
+  content: "";
 }
 #preauto > .content > div > #preauto-robot-dropdown {
-    z-index: 1;
+  z-index: 1;
 
-    position: absolute;
-    top: 100%;
-    left: 0%;
+  position: absolute;
+  top: 100%;
+  left: 0%;
 
-    width: 100%;
-    max-height: 50vh;
-    overflow: auto;
+  width: 100%;
+  max-height: 50vh;
+  overflow: auto;
 
-    display: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 #preauto > .content > div > #preauto-robot:focus + #preauto-robot-dropdown,
 #preauto > .content > div > #preauto-robot-dropdown:has(> button:active) {
-    display: flex;
+  display: flex;
 }
 #preauto > .content > div > #preauto-robot-dropdown > button {
-    padding: 20px;
+  padding: 20px;
 
-    border-top: 5px solid var(--v6);
+  border-top: 5px solid var(--v6);
 }
 #preauto > .content > div > #preauto-robot-dropdown > button:first-of-type {
-    border-top: none;
+  border-top: none;
 }
 #preauto > .content > #preauto-preload {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 
-    text-align: center;
+  text-align: center;
 }
 #preauto > .content > #preauto-preload:has(> input:checked) {
-    background-color: var(--a2);
-    color: #fff;
+  background-color: var(--a2);
+  color: #fff;
 }
 #preauto > .content > #preauto-preload:has(> input:active) {
-    background-color: var(--fg) !important;
-    color: var(--bg);
+  background-color: var(--fg) !important;
+  color: var(--bg);
 }
 #preauto > .content > #preauto-preload > input {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    opacity: 0%;
+  opacity: 0%;
 }
 #preauto > .content > #preauto-preload > h1 {
-    margin: 0px;
+  margin: 0px;
 }
 #preauto > .content > #preauto-preload > h1::before {
-    content: "NOTHING";
+  content: "NOTHING";
 }
 #preauto > .content > #preauto-preload:has(> input:checked) > h1::before {
-    content: "NOTE";
+  content: "NOTE";
 }
 #preauto > .content > #preauto-team {
-    padding: 20px;
+  padding: 20px;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 }
 #preauto > .content > #preauto-team > h1::before {
-    content: "NONE";
+  content: "NONE";
 }
 #preauto > .content > #preauto-team[red] {
-    background-color: var(--r3);
-    color: #fff;
+  background-color: var(--r3);
+  color: #fff;
 }
 #preauto > .content > #preauto-team[red] > h1::before {
-    content: "RED";
+  content: "RED";
 }
 #preauto > .content > #preauto-team[blue] {
-    background-color: var(--b3);
-    color: #fff;
+  background-color: var(--b3);
+  color: #fff;
 }
 #preauto > .content > #preauto-team[blue] > h1::before {
-    content: "BLUE";
+  content: "BLUE";
 }
 #preauto > .content > #preauto-team:not(:disabled):active {
-    background-color: var(--fg) !important;
-    color: var(--bg) !important;
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
 }
 #preauto > .content > #preauto-start {
-    padding: 20px;
+  padding: 20px;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 #auto {
-    flex-direction: row;
+  flex-direction: row;
 }
 #auto > .section {
-    width: 40vw;
+  width: 40vw;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 1em;
 }
 #auto > .section button {
-    padding: 0.5em;
+  padding: 0.5em;
 
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 #auto > .section > button > ion-icon {
-    font-size: 2em;
+  font-size: 2em;
 }
 #auto > .section > .nav {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 0.5em;
 }
 #auto > .section > .nav > h1 {
-    margin: 0em;
+  margin: 0em;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    gap: 0.25em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 0.25em;
 }
 #auto > .section > .nav > h1 > span:first-child {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 #auto > .section > .nav > h1 > button {
-    padding: 0.25em;
+  padding: 0.25em;
 
-    font-size: 0.75em;
+  font-size: 0.75em;
 }
 #auto > .section > .nav > h1 > span:nth-last-of-type(2) {
-    color: var(--g4);
+  color: var(--g4);
 
-    font-weight: 500;
+  font-weight: 500;
 }
 #auto > .section > .nav > h1 > span:nth-last-of-type(1) {
-    color: var(--r4);
+  color: var(--r4);
 
-    font-weight: 500;
+  font-weight: 500;
 }
 #auto > .section > .nav > .nav {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  gap: 0.5em;
 }
 #auto > .section > .nav > .nav > button {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    padding: 0em;
+  padding: 0em;
 
-    font-size: 5em;
+  font-size: 5em;
 }
 #auto > .section #auto-disable {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    padding: 0.5em;
+  width: 100%;
+  padding: 0.5em;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 
-    background-color: var(--v4);
-    border-radius: 0.5rem;
+  background-color: var(--v4);
+  border-radius: 0.5rem;
 
-    text-align: center;
+  text-align: center;
 }
 #auto > .section #auto-disable:has(> input:checked) {
-    background-color: var(--r4);
-    color: #fff;
+  background-color: var(--r4);
+  color: #fff;
 }
 #auto > .section #auto-disable:has(> input:active) {
-    background-color: var(--fg) !important;
-    color: var(--bg) !important;
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
 }
 #auto > .section #auto-disable > input {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    opacity: 0%;
+  opacity: 0%;
 }
 #auto > .section #auto-disable > h1 {
-    margin: 0em;
+  margin: 0em;
 }
 #auto > .section #auto-disable > h1::before {
-    content: "Disabled";
+  content: "Disabled";
 
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 #auto > .section #auto-disable:has(> input:checked) > h1::before {
-    text-decoration: none;
+  text-decoration: none;
 }
 #auto > #auto-field {
-    --scale-x: 1;
-    --scale-y: 1;
+  --scale-x: 1;
+  --scale-y: 1;
 
-    position: relative;
+  position: relative;
 
-    width: 60vw;
+  width: 60vw;
 
-    background-image: url(./field.png);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
+  background-image: url(./field.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 }
 #auto > #auto-field > #auto-pickup {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) scale(var(--scale-x), var(--scale-y));
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(var(--scale-x), var(--scale-y));
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 0.5em;
 }
 #auto > #auto-field > #auto-pickup > h2 {
-    margin: 0em;
+  margin: 0em;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 0.25em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.25em;
 }
 #auto > #auto-field > #auto-pickup > h2 > button {
-    padding: 0.25em;
+  padding: 0.25em;
 
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 #auto > #auto-field > #auto-pickup > h2 > span:nth-last-of-type(2) {
-    color: var(--g4);
+  color: var(--g4);
 }
 #auto > #auto-field > #auto-pickup > h2 > span:nth-last-of-type(1) {
-    color: var(--r4);
+  color: var(--r4);
 }
 #auto > #auto-field > #auto-pickup > button {
-    padding: 0.25em;
+  padding: 0.25em;
 
-    border-radius: 0.5rem;
-    
-    font-size: 5em;
+  border-radius: 0.5rem;
+
+  font-size: 5em;
 }
 #auto > #auto-field > .auto-pickup {
-    position: absolute;
-    transform: translate(50%, -50%);
+  position: absolute;
+  transform: translate(50%, -50%);
 
-    width: 7.5em;
-    aspect-ratio: 1 / 1;
+  width: 7.5em;
+  aspect-ratio: 1 / 1;
 
-    background-color: var(--a2a);
-    border-radius: 100%;
+  background-color: var(--a2a);
+  border-radius: 100%;
 }
 #auto > #auto-field > .auto-pickup:active {
-    background-color: var(--a2);
+  background-color: var(--a2);
 }
 #auto > #auto-field > .auto-pickup.this {
-    border: 0.25rem solid var(--fg);
+  border: 0.25rem solid var(--fg);
 }
 
 #teleop {
-    gap: 0.5em;
+  gap: 0.5em;
 }
 #teleop > .content {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  gap: 0.5em;
 }
 #teleop > .content > .section {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 0.5em;
 }
 #teleop > .content > .section > h3 {
-    margin: 0em;
+  margin: 0em;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 0.5em;
 
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 #teleop > .content > .section > h3 > button {
-    padding: 0.25em;
+  padding: 0.25em;
 
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 #teleop > .content > .section > h3 > span:first-child {
-    opacity: 50%;
+  opacity: 50%;
 }
 #teleop > .content > .section > h3 > span:nth-child(2) {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 #teleop > .content > .section > h3 > span:nth-last-of-type(2) {
-    color: var(--g4);
+  color: var(--g4);
 }
 #teleop > .content > .section > h3 > span:nth-last-of-type(1) {
-    color: var(--r4);
+  color: var(--r4);
 }
 #teleop > .content > .section > .nav {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 0.5em;
 }
 #teleop > .content > .section > .nav > button {
-    flex-basis: 100%;
-    
-    padding: 0em;
-    
-    border-radius: 0.5rem;
+  flex-basis: 100%;
 
-    font-size: 5em;
+  padding: 0em;
+
+  border-radius: 0.5rem;
+
+  font-size: 5em;
 }
 #teleop > .nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  gap: 0.5em;
 }
 #teleop > .nav > * {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 #teleop > .nav #teleop-disable {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    padding: 10px;
+  width: 100%;
+  padding: 10px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 
-    text-align: center;
+  text-align: center;
 }
 #teleop > .nav #teleop-disable:has(> input:checked) {
-    background-color: var(--r4);
-    color: #fff;
+  background-color: var(--r4);
+  color: #fff;
 }
 #teleop > .nav #teleop-disable:has(> input:active) {
-    background-color: var(--fg) !important;
-    color: var(--bg) !important;
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
 }
 #teleop > .nav #teleop-disable > input {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    opacity: 0%;
+  opacity: 0%;
 }
 #teleop > .nav #teleop-disable > h1::before {
-    content: "Disabled";
+  content: "Disabled";
 
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 #teleop > .nav #teleop-disable:has(> input:checked) > h1::before {
-    text-decoration: none;
+  text-decoration: none;
 }
 #teleop > .nav > button {
-    padding: 1em;
+  padding: 1em;
 }
 #teleop > .nav > button > ion-icon {
-    font-size: 2em;
+  font-size: 2em;
 }
 #teleop > #teleop-modal {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    width: 100%;
-    height: 100%;
-    padding: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
 
-    display: none;
+  display: none;
 }
 #teleop > #teleop-modal.this,
 #teleop > #teleop-modal:has(button:active) {
-    display: block;
+  display: block;
 }
 #teleop > #teleop-modal * {
-    text-align: center;
+  text-align: center;
 }
 #teleop > #teleop-modal > div {
-    position: relative;
-    top: 0%;
+  position: relative;
+  top: 0%;
 
-    width: 100%;
-    height: 100%;
-    padding: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 20px;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 }
 #teleop > #teleop-modal > div > h2 {
-    margin: 0px;
+  margin: 0px;
 }
 #teleop > #teleop-modal > div > .content {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 20px;
 }
-@media screen and (orientation:portrait) {
-    #teleop > #teleop-modal > div > .content {
-        flex-direction: column;
-    }
+@media screen and (orientation: portrait) {
+  #teleop > #teleop-modal > div > .content {
+    flex-direction: column;
+  }
 }
 #teleop > #teleop-modal > div > .content > .field {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    position: relative;
+  position: relative;
 
-    padding: 20px;
+  padding: 20px;
 
-    display: none;
+  display: none;
 
-    background-color: var(--bga);
-    border-radius: 10px;
+  background-color: var(--bga);
+  border-radius: 10px;
 }
 #teleop > #teleop-modal.field > div > .content > .field {
-    display: block;
+  display: block;
 }
 #teleop > #teleop-modal > div > .content > .field > #teleop-field {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    background-image: url(./field.png);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
+  background-image: url(./field.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 }
-#teleop > #teleop-modal > div > .content > .field > #teleop-field > #teleop-robot {
-    position: absolute;
-    transform: translate(-50%, -50%);
+#teleop
+  > #teleop-modal
+  > div
+  > .content
+  > .field
+  > #teleop-field
+  > #teleop-robot {
+  position: absolute;
+  transform: translate(-50%, -50%);
 
-    background-color: var(--fga);
-    border: 5px solid var(--fg);
+  background-color: var(--fga);
+  border: 5px solid var(--fg);
 }
 #teleop > #teleop-modal > div > .content > .nav {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 20px;
 }
 #teleop > #teleop-modal > div > .content > .nav > .content {
-    flex-basis: 66%;
+  flex-basis: 66%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  gap: 20px;
 }
-@media screen and (orientation:portrait) {
-    #teleop > #teleop-modal > div > .content > .nav > .content {
-        flex-direction: column;
-    }
+@media screen and (orientation: portrait) {
+  #teleop > #teleop-modal > div > .content > .nav > .content {
+    flex-direction: column;
+  }
 }
 #teleop > #teleop-modal.field > div > .content > .nav > .content {
-    flex-direction: column;
+  flex-direction: column;
 }
 #teleop > #teleop-modal > div > .content > .nav > .content > button,
 #teleop > #teleop-modal > div > .content > .nav > button {
-    border-radius: 10px;
+  border-radius: 10px;
 
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 #teleop > #teleop-modal > div > .content > .nav > .content > button {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 #teleop > #teleop-modal > div > .content > .nav > button {
-    flex-basis: 33%;
+  flex-basis: 33%;
 }
 
 #endgame > #endgame-pos {
-    -webkit-appearance: none;
-    appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 
-    align-self: center;
+  align-self: center;
 
-    width: calc(75% - 20px);
-    height: 40px;
+  width: calc(75% - 20px);
+  height: 40px;
 
-    background-color: var(--a);
+  background-color: var(--a);
 }
 #endgame > #endgame-pos::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 
-    height: 60px;
-    aspect-ratio: 1 / 1;
+  height: 60px;
+  aspect-ratio: 1 / 1;
 
-    background-color: #fff;
-    border-radius: 100%;
-    border: 5px solid var(--a);
+  background-color: #fff;
+  border-radius: 100%;
+  border: 5px solid var(--a);
 
-    cursor: pointer;
+  cursor: pointer;
 }
 #endgame > .selector {
-    align-self: stretch;
+  align-self: stretch;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0px;
 }
 #endgame > .selector > h1 {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    margin: 0px;
+  margin: 0px;
 
-    color: var(--fga);
+  color: var(--fga);
 
-    text-align: center;
+  text-align: center;
 }
 #endgame > .selector > h1.this {
-    color: var(--fg);
+  color: var(--fg);
 }
 #endgame > .content {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  gap: 20px;
 }
-@media screen and (orientation:portrait) {
-    #endgame > .content {
-        flex-direction: column;
-    }
+@media screen and (orientation: portrait) {
+  #endgame > .content {
+    flex-direction: column;
+  }
 }
 #endgame > .content > #endgame-trap,
 #endgame > .content > #endgame-harmony {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    position: relative;
+  position: relative;
 
-    padding: 20px;
+  padding: 20px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 
-    text-align: center;
-    font-size: 1.5em;
+  text-align: center;
+  font-size: 1.5em;
 }
 #endgame > .content > #endgame-trap:has(> input:disabled),
 #endgame > .content > #endgame-harmony:has(> input:disabled) {
-    background-color: var(--v2);
-    color: var(--v8);
+  background-color: var(--v2);
+  color: var(--v8);
 }
 #endgame > .content > #endgame-trap:has(> input:checked),
 #endgame > .content > #endgame-harmony:has(> input:checked) {
-    color: #fff;
+  color: #fff;
 }
 #endgame > .content > #endgame-trap:has(> input:disabled:checked),
 #endgame > .content > #endgame-harmony:has(> input:disabled:checked) {
-    color: #fff8;
+  color: #fff8;
 }
 #endgame > .content > #endgame-trap:has(> input:checked) {
-    background: var(--a2);
+  background: var(--a2);
 }
 #endgame > .content > #endgame-trap:has(> input:disabled:checked) {
-    background: linear-gradient(var(--bga), var(--bga)), linear-gradient(var(--a2), var(--a2));
+  background: linear-gradient(var(--bga), var(--bga)),
+    linear-gradient(var(--a2), var(--a2));
 }
 #endgame > .content > #endgame-harmony:has(> input:checked) {
-    background-color: var(--g4);
+  background-color: var(--g4);
 }
 #endgame > .content > #endgame-harmony:has(> input:disabled:checked) {
-    background-color: var(--g2);
+  background-color: var(--g2);
 }
 #endgame > .content > #endgame-trap:has(> input:not(:disabled):active),
 #endgame > .content > #endgame-harmony:has(> input:not(:disabled):active) {
-    background-color: var(--fg) !important;
-    color: var(--bg) !important;
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
 }
 #endgame > .content > #endgame-trap > input,
 #endgame > .content > #endgame-harmony > input {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    opacity: 0%;
+  opacity: 0%;
 }
 #endgame > .content > #endgame-trap > h1::before,
 #endgame > .content > #endgame-harmony > h1::before {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 #endgame > .content > #endgame-trap > h1::before {
-    content: "Scored Trap";
+  content: "Scored Trap";
 }
 #endgame > .content > #endgame-harmony > h1::before {
-    content: "Harmonized";
+  content: "Harmonized";
 }
 #endgame > .content > #endgame-trap:has(> input:checked) > h1::before,
 #endgame > .content > #endgame-harmony:has(> input:checked) > h1::before {
-    text-decoration: none;
+  text-decoration: none;
 }
 #endgame > #endgame-next {
-    padding: 20px;
+  padding: 20px;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 #endgame > #endgame-next > ion-icon {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 #notes > #notes-notes {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    padding: 20px;
+  padding: 20px;
 
-    background-color: var(--v4);
-    color: var(--fg);
-    border-radius: 10px;
+  background-color: var(--v4);
+  color: var(--fg);
+  border-radius: 10px;
 
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 #notes > #notes-notes::placeholder {
-    color: var(--v6);
+  color: var(--v6);
 }
 #notes > #notes-next {
-    padding: 20px;
+  padding: 20px;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 #notes > #notes-next > ion-icon {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 #finish > .content {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    padding: 20px;
-    overflow: hidden;
+  padding: 20px;
+  overflow: hidden;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 }
 #finish > .content > #finish-code {
-    position: relative;
+  position: relative;
 }
 #finish > .content > #finish-code::before {
-    content: "";
+  content: "";
 
-    position: absolute;
-    top: -20px;
-    left: -20px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
 
-    width: calc(100% + 40px);
-    height: calc(100% + 40px);
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
 
-    background-color: #fff;
+  background-color: #fff;
 }
 #finish > .content > #finish-code > canvas {
-    z-index: 2;
+  z-index: 2;
 
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 #finish > .nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
 }
 #finish > .nav > button {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    padding: 20px;
+  padding: 20px;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 #prompt {
-    z-index: 100;
-    
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  z-index: 100;
 
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    display: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  width: 100%;
+  height: 100%;
 
-    background-color: var(--bga);
-    color: var(--fg);
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  background-color: var(--bga);
+  color: var(--fg);
 }
 #prompt.this {
-    display: flex;
+  display: flex;
 }
 #prompt > div {
-    transform: translateY(-25vh);
+  transform: translateY(-25vh);
 
-    padding: 20px;
+  padding: 20px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  gap: 10px;
 
-    background-color: var(--v4);
-    border-radius: 10px;
+  background-color: var(--v4);
+  border-radius: 10px;
 }
 #prompt > div > h1 {
-    min-width: 30vw;
-    margin: 0px;
+  min-width: 30vw;
+  margin: 0px;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
 }
 #prompt > div > h1 > span {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 #prompt > div > h1 > button {
-    height: 100%;
-    aspect-ratio: 1 / 1;
+  height: 100%;
+  aspect-ratio: 1 / 1;
 
-    background-color: transparent;
-    border-radius: 100%;
+  background-color: transparent;
+  border-radius: 100%;
 }
 #prompt > div > input {
-    width: 50vw;
-    padding: 10px;
+  width: 50vw;
+  padding: 10px;
 
-    background-color: var(--v2);
-    color: var(--fg);
+  background-color: var(--v2);
+  color: var(--fg);
 
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 #prompt > div > input::placeholder {
-    color: var(--v4);
+  color: var(--v4);
 
-    font-style: italic;
+  font-style: italic;
 }
 #prompt > div > h2 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  gap: 0.5em;
 }
 #prompt > div > h2 > button {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    padding: 0.5em 0.75em;
+  padding: 0.5em 0.75em;
 
-    border-radius: 0.25rem;
+  border-radius: 0.25rem;
 
-    font-size: inherit;
-    font-weight: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 #overlay {
-    z-index: 200;
+  z-index: 200;
 
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 
-    background-color: var(--bga);
-    color: var(--fg);
+  background-color: var(--bga);
+  color: var(--fg);
 
-    font-size: 2em;
+  font-size: 2em;
 }
 #overlay.this {
-    display: flex;
+  display: flex;
 }
 #overlay > .hidden {
-    margin-top: 100px;
+  margin-top: 100px;
 
-    opacity: 25%;
+  opacity: 25%;
 }

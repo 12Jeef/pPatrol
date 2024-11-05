@@ -1,0 +1,79 @@
+body > button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 0.5em;
+
+    background-color: var(--v4);
+    border-radius: 0.5rem;
+
+    font-size: 3em;
+}
+body > button:active {
+    background-color: var(--v6);
+}
+
+#feed {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    width: 100%;
+    height: auto;
+}
+#feed > div {
+    visibility: hidden;
+}
+
+#prompt {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: center;
+
+    background-color: var(--v4);
+
+    transition: top var(--t);
+}
+#prompt.this {
+    top: 0%;
+}
+#prompt > h3 {
+    flex-basis: 100%;
+
+    max-height: 100%;
+    overflow: auto;
+
+    font-family: monospace;
+    white-space: pre;
+    word-break: break-all;
+}
+#prompt > button {
+    padding: 0.5em;
+
+    background-color: var(--a);
+    color: var(--fg);
+    border-radius: 0.5em;
+}
+#prompt > button:not(:disabled):active {
+    background-color: var(--fg);
+    color: var(--bg);
+}
+#prompt > button:disabled {
+    opacity: 50%;
+}
+#prompt > button > h1 {
+    margin: 0em;
+}

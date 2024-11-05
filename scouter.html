@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PeninsulaPatrol - Scouter</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./scouter-style.css">
+        <script src="./qrious.min.js"></script>
+        <script type="module">
+            import App from "./scouter-app.js";
+			const app = new App();
+			app.start();
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <button id="back" special><ion-icon name="arrow-back"></ion-icon></button>
+            <button id="forward" special><ion-icon name="arrow-forward"></ion-icon></button>
+            <h1><span>Peninsula</span>Patrol</h1>
+            <h3 id="match"></h3>
+            <h3 id="id"></h3>
+            <h2 id="time">0:00.000</h2>
+            <button id="screen" special>
+                <ion-icon name="expand"></ion-icon>
+                <ion-icon name="contract"></ion-icon>
+            </button>
+            <button id="reload" special><ion-icon name="refresh"></ion-icon></button>
+        </div>
+        <div id="settings" class="page">
+            <h2>Current Event:</h2>
+            <h1 id="setting-event"><span id="setting-event-name"></span><span id="setting-event-id"></span></h1>
+            <h2>Alliance Color on Left:</h2>
+            <!-- <div class="field">
+                <div id="setting-flipx"><input type="checkbox" id="setting-flippedx"><h1></h1></div>
+                <div id="setting-flipy"><input type="checkbox" id="setting-flippedy"><h1></h1></div>
+            </div> -->
+            <div id="setting-left"><input type="checkbox" id="setting-left-red"><h1></h1></div>
+            <h2>Scouting Id:</h2>
+            <div class="match">
+                <h1 class="id">#</h1>
+                <div class="teams">
+                    <div class="red">
+                        <button class="setting-id"><h1></h1></button>
+                        <button class="setting-id"><h1></h1></button>
+                        <button class="setting-id"><h1></h1></button>
+                    </div>
+                    <div class="blue">
+                        <button class="setting-id"><h1></h1></button>
+                        <button class="setting-id"><h1></h1></button>
+                        <button class="setting-id"><h1></h1></button>
+                    </div>
+                </div>
+            </div>
+            <button id="setting-pwd-edit"><ion-icon name="pencil"></ion-icon>Edit Access Password</button>
+            <button id="setting-reset-data"><ion-icon name="close"></ion-icon>Reset Match Data</button>
+        </div>
+        <div id="navigator" class="page">
+            <header>
+                <h3>
+                    <button id="scouter-name"></button>
+                    <div id="scouter-dropdown"></div>
+                </h3>
+                <h1>Qualification matches</h1>
+                <button id="practice-match"><h3>Practice Match</h3></button>
+            </header>
+            <div id="navigator-list" class="content"></div>
+        </div>
+        <div id="preauto" class="page">
+            <div class="field">
+                <div id="preauto-field">
+                    <div id="preauto-robot-pos"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h1>Robot:</h1>
+                <div>
+                    <button id="preauto-robot" special><h1 id="preauto-robot-id">6036</h1></button>
+                    <div id="preauto-robot-dropdown"></div>
+                </div>
+                <h1>Preload:</h1>
+                <div id="preauto-preload"><input type="checkbox" id="preauto-preloaded"><h1></h1></div>
+                <h1>Alliance:</h1>
+                <button id="preauto-team"><h1></h1></button>
+                <div style="flex-basis:100%;"></div>
+                <button id="preauto-start" special><h1>START MATCH</h1></button>
+            </div>
+        </div>
+        <div id="auto" class="page">
+            <div class="section">
+                <div class="nav">
+                    <h1><span>Amp</span><span id="auto-amp-success-count"></span><span id="auto-amp-fail-count"></span><button id="auto-amp-undo"><ion-icon name="arrow-undo"></ion-icon></button></h1>
+                    <div class="nav">
+                        <button id="auto-amp-success" success><ion-icon name="checkmark"></ion-icon></button>
+                        <button id="auto-amp-fail" fail><ion-icon name="close-outline"></ion-icon></button>
+                    </div>
+                </div>
+                <div class="nav">
+                    <h1><span>Speaker</span><span id="auto-speaker-success-count"></span><span id="auto-speaker-fail-count"></span><button id="auto-speaker-undo"><ion-icon name="arrow-undo"></ion-icon></button></h1>
+                    <div class="nav">
+                        <button id="auto-speaker-success" success><ion-icon name="checkmark"></ion-icon></button>
+                        <button id="auto-speaker-fail" fail><ion-icon name="close-outline"></ion-icon></button>
+                    </div>
+                </div>
+                <div id="auto-disable"><input type="checkbox" id="auto-disabled"><h1></h1></div>
+                <button id="auto-next" special><h1>TELEOP</h1><ion-icon name="arrow-forward"></ion-icon></button>
+            </div>
+            <div id="auto-field">
+                <div class="auto-pickup"></div>
+                <div class="auto-pickup"></div>
+                <div class="auto-pickup"></div>
+                <div class="auto-pickup"></div>
+                <div class="auto-pickup"></div>
+                <div class="auto-pickup"></div>
+                <div class="auto-pickup"></div>
+                <div class="auto-pickup"></div>
+                <div id="auto-pickup">
+                    <h2>Pickup</h2>
+                    <h2><span id="auto-pickup-success-count"></span><span id="auto-pickup-fail-count"></span><button id="auto-pickup-undo"><ion-icon name="arrow-undo"></ion-icon></button></h2>
+                    <button id="auto-pickup-success" success><ion-icon name="checkmark"></ion-icon></button>
+                    <button id="auto-pickup-fail" fail><ion-icon name="close-outline"></ion-icon></button>
+                    <button id="auto-pickup-cancel"><ion-icon name="remove"></ion-icon></button>
+                </div>
+            </div>
+        </div>
+        <div id="teleop" class="page">
+            <div class="content">
+                <div class="section" style="flex-basis:50%;">
+                    <!-- <h3><span style="display:none;"></span><span style="color:var(--fg);">Hoard</span><span id="teleop-hoard-count" style="color:var(--fg);">0</span></h3> -->
+                    <h3><span style="display:none;"></span><span>Hoard</span><span id="teleop-hoard-success-count"></span><span id="teleop-hoard-fail-count"></span><button id="teleop-hoard-undo"><ion-icon name="arrow-undo"></ion-icon></button></h3>
+                    <div class="nav">
+                        <!-- <button id="teleop-hoard-add"><ion-icon name="bag-add"></ion-icon></button> -->
+                        <button id="teleop-hoard-success" success><ion-icon name="bag"></ion-icon><ion-icon name="checkmark"></ion-icon></button>
+                    </div>
+                    <div class="nav">
+                        <!-- <button id="teleop-hoard-rem"><ion-icon name="bag-remove"></ion-icon></button> -->
+                        <button id="teleop-hoard-fail" fail><ion-icon name="bag"></ion-icon><ion-icon name="close-outline"></ion-icon></button>
+                    </div>
+                </div>
+                <div class="section" style="display:none;">
+                    <h3><span>Pickup:</span><span>Source</span><span id="teleop-pickup-source-success-count"></span><span id="teleop-pickup-source-fail-count"></span><button id="teleop-pickup-source-undo"><ion-icon name="arrow-undo"></ion-icon></button></h3>
+                    <div class="nav">
+                        <button id="teleop-pickup-source-success" success><ion-icon name="checkmark"></ion-icon></button>
+                        <button id="teleop-pickup-source-fail" fail><ion-icon name="close-outline"></ion-icon></button>
+                    </div>
+                    <h3><span>Pickup:</span><span>Ground</span><span id="teleop-pickup-ground-success-count"></span><span id="teleop-pickup-ground-fail-count"></span><button id="teleop-pickup-ground-undo"><ion-icon name="arrow-undo"></ion-icon></button></h3>
+                    <div class="nav">
+                        <button id="teleop-pickup-ground-success" success><ion-icon name="checkmark"></ion-icon></button>
+                        <button id="teleop-pickup-ground-fail" fail><ion-icon name="close-outline"></ion-icon></button>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3><span>Score:</span><span>Speaker</span><span id="teleop-score-speaker-success-count"></span><span id="teleop-score-speaker-fail-count"></span><button id="teleop-score-speaker-undo"><ion-icon name="arrow-undo"></ion-icon></button></h3>
+                    <div class="nav">
+                        <button id="teleop-score-speaker"><ion-icon name="ellipsis-horizontal"></ion-icon></button>
+                    </div>
+                    <h3><span>Score:</span><span>Amp</span><span id="teleop-score-amp-success-count"></span><span id="teleop-score-amp-fail-count"></span><button id="teleop-score-amp-undo"><ion-icon name="arrow-undo"></ion-icon></button></h3>
+                    <div class="nav">
+                        <button id="teleop-score-amp-success" success><ion-icon name="checkmark"></ion-icon></button>
+                        <button id="teleop-score-amp-fail" fail><ion-icon name="close-outline"></ion-icon></button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav">
+                <div id="teleop-disable"><input type="checkbox" id="teleop-disabled"><h1></h1></div>
+                <button id="teleop-next" special><h1>ENDGAME</h1><ion-icon name="arrow-forward"></ion-icon></button>
+            </div>
+            <div id="teleop-modal">
+                <div>
+                    <h2 id="teleop-type"></h2>
+                    <div class="content">
+                        <div class="field">
+                            <div id="teleop-field">
+                                <div id="teleop-robot"></div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <div class="content">
+                                <button id="teleop-success" success><h1>SUCCESS</h1></button>
+                                <button id="teleop-fail" fail><h1>FAIL</h1></button>
+                            </div>
+                            <button id="teleop-cancel" light><h1>CANCEL</h1></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="endgame" class="page">
+            <input type="range" min="0" max="2" value="0" id="endgame-pos">
+            <div class="selector">
+                <h1 class="endgame-pos-selector">None</h1>
+                <h1 class="endgame-pos-selector">Parked</h1>
+                <h1 class="endgame-pos-selector">Onstage</h1>
+            </div>
+            <div class="content">
+                <div id="endgame-trap"><input type="checkbox" id="endgame-trapped"><h1></h1></div>
+                <div id="endgame-harmony"><input type="checkbox" id="endgame-harmonied"><h1></h1></div>
+            </div>
+            <button id="endgame-next" special><h1>FINISH</h1><ion-icon name="arrow-forward"></ion-icon></button>
+        </div>
+        <div id="notes" class="page">
+            <textarea id="notes-notes" placeholder="Notes..."></textarea>
+            <button id="notes-next" special><h1>SCAN</h1><ion-icon name="arrow-forward"></ion-icon></button>
+        </div>
+        <div id="finish" class="page">
+            <div id="finish-code-box" class="content">
+                <div id="finish-code"></div>
+            </div>
+            <div class="nav">
+                <button id="finish-next" special><h1>DONE</h1></button>
+                <button id="finish-reset"><h1>RESET</h1></button>
+            </div>
+        </div>
+        <div id="prompt">
+            <div>
+                <h1><span id="prompt-title"></span><button id="prompt-close"><ion-icon name="close"></ion-icon></button></h1>
+                <input id="prompt-input">
+                <h2 id="prompt-btns">
+                    <button id="prompt-yes" special>Yes</button>
+                    <button id="prompt-no" light>No</button>
+                </h2>
+            </div>
+        </div>
+        <div id="overlay">
+            <h1>Click anywhere</h1>
+            <h3>Currently locked in fullscreen mode</h3>
+            <h6 class="hidden">Change this in the admin panel</h6>
+        </div>
+        <script type="module" src="./ionicons/dist/ionicons/ionicons.esm.js"></script>
+        <script type="module" nomodule="true" src="./ionicons/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

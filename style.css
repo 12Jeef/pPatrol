@@ -1,0 +1,146 @@
+html, body {
+    height: 100%;
+}
+
+:root {
+    --a: #6f2ac9;
+    --aa0: #6f2ac900;
+    --aa1: #6f2ac944;
+    --aa2: #6f2ac988;
+    --aa3: #6f2ac9cc;
+    /* --a: #2959ba;
+    --aa0: #2959ba00;
+    --aa1: #2959ba44;
+    --aa2: #2959ba88;
+    --aa3: #2959bacc; */
+    --aa: var(--aa2);
+    --a2: #d16411;
+    --a2a0: #d1641100;
+    --a2a1: #d1641144;
+    --a2a2: #d1641188;
+    --a2a3: #d16411cc;
+    --a2a: var(--a2a2);
+
+    --bg: #000;
+    --bga0: #0000;
+    --bga1: #0004;
+    --bga2: #0008;
+    --bga3: #000c;
+    --bga: var(--bga2);
+    --fg: #fff;
+    --fga0: #fff0;
+    --fga1: #fff4;
+    --fga2: #fff8;
+    --fga3: #fffc;
+    --fga: var(--fga2);
+    --v2: #222;
+    --v4: #444;
+    --v6: #666;
+    --v8: #888;
+    --va: #aaa;
+    --vc: #ccc;
+    --ve: #eee;
+    --r1: #211;
+    --r2: #422;
+    --r3: #833;
+    --r4: #a44;
+    --r5: #f88;
+    --g1: #121;
+    --g2: #242;
+    --g3: #383;
+    --g4: #4a4;
+    --g5: #8f8;
+    --b1: #112;
+    --b2: #234;
+    --b3: #358;
+    --b4: #47a;
+    --b5: #8af;
+
+    --t: 0.25s;
+}
+
+/* @media (prefers-color-scheme: light) {
+    :root {
+        --bg: #fff;
+        --bga: #fff8;
+        --bgt: #fff0;
+        --fg: #000;
+        --fga: #0008;
+        --fgt: #0000;
+        --v2: #eee;
+        --v4: #ccc;
+        --v6: #aaa;
+        --v8: #888;
+        --va: #666;
+        --vc: #444;
+        --ve: #222;
+        --r1: #f88;
+        --r2: #e77;
+        --r3: #d66;
+        --r4: #c44;
+        --r5: #b22;
+        --g1: #8f8;
+        --g2: #7e7;
+        --g3: #6d6;
+        --g4: #4c4;
+        --g5: #2b2;
+        --b1: #8af;
+        --b2: #79e;
+        --b3: #68d;
+        --b4: #46c;
+        --b5: #24b;
+    }
+} */
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+    background-color: var(--bg);
+    color: var(--fg);
+
+    font-size: 1em;
+}
+
+textarea, input {
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.25em 0em;
+}
+
+ion-icon {
+    min-width: max-content;
+    min-height: max-content;
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    padding: 0px;
+
+    color: var(--fg);
+    border: none;
+    outline: none;
+
+    font-size: 1em;
+
+    cursor: pointer;
+}
+button * {
+    margin: 0px;
+}

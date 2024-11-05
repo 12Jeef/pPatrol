@@ -1,0 +1,9 @@
+{
+	"short_name": "PPatrol",
+	"name": "Peninsula Patrol",
+	"icons": [
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait"
+}

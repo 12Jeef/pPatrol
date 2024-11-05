@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PeninsulaPatrol - Viewer</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./viewer-style.css">
+        <script src="./prism.min.js"></script>
+        <link rel="stylesheet" href="./prism.min.css">
+        <script src="./qrious.min.js"></script>
+        <script src="./heatmap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script type="module">
+            import App from "./viewer-app.js";
+			const app = new App();
+			app.start();
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <h1><span>Peninsula</span>Patrol</h1>
+        </div>
+        <div id="field-popup" class="popup">
+            <div class="content">
+                <div id="field">
+                    <div id="field-box"></div>
+                    <canvas id="field-canvas"></canvas>
+                </div>
+                <div class="nav" id="field-popup-nav">
+                </div>
+                <button id="field-popup-close"><ion-icon name="close"></ion-icon></button>
+            </div>
+        </div>
+        <div id="server-config-page" class="page">
+            <div>
+                <div id="server-config-events">
+                    <div class="nav">
+                        <button id="server-config-events-enter">Enter</button>
+                        <button id="server-config-events-cancel">Cancel</button>
+                        <button id="server-config-events-confirm" class="special">Confirm</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h3 class="editable">
+                    <button id="server-config-api-key-edit"><ion-icon name="pencil"></ion-icon></button>
+                    <span>TBA API Key:</span>
+                    <span id="server-config-api-key"></span>
+                </h3>
+                <h3 class="editable">
+                    <button id="server-config-event-edit"><ion-icon name="pencil"></ion-icon></button>
+                    <span>Event:</span>
+                    <span>
+                        <span id="server-config-event-name"></span>
+                        <span id="server-config-event-key"></span>
+                    </span>
+                </h3>
+                <h3 class="editable">
+                    <button id="server-config-pwd-edit"><ion-icon name="pencil"></ion-icon></button>
+                    <span>Access Password:</span>
+                    <span id="server-config-pwd"></span>
+                </h3>
+                <div class="tab-nav">
+                    <button id="api-matches">Matches</button>
+                    <button id="api-teams">Teams</button>
+                    <button id="api-scouters">Scouters</button>
+                    <button id="api-scanners">Scanners</button>
+                </div>
+                <div id="api-listing"></div>
+            </div>
+        </div>
+        <div id="master-list-page" class="page">
+            <header>
+                Include:
+                <button id="listing-include-practice" style="color:var(--r4);">Practice</button>
+                <button id="listing-include-elim" style="color:var(--g4);">Elims</button>
+                <button id="listing-include-quals" style="color:var(--fg);">Quals</button>
+                <button id="listing-include-_show" style="margin-left:1rem;">Show Skipped Matches</button>
+            </header>
+        </div>
+        <div id="team-analytics-page" class="page">
+            <h3>
+                <span class="k">Team:</span>
+                <div>
+                    <button id="team-analytics-team"></button>
+                    <div id="team-analytics-dropdown">
+                        <input id="team-analytics-dropdown-search" placeholder="Enter #" autocapitalize="false" autocomplete="off" spellcheck="false">
+                        <div id="team-analytics-dropdown-content"></div>
+                    </div>
+                </div>
+                <span class="k">Scouted:</span>
+                <span>
+                    <span id="team-analytics-n-scouted"></span>
+                    <span class="k">/</span>
+                    <span id="team-analytics-n-total"></span>
+                </span>
+                <span class="k">Extra Scouted:</span>
+                <span id="team-analytics-n-extra" style="flex-basis:100%;"></span>
+                <span class="k">Hotswap:</span>
+                <button class="team-analytics-hotswap-slot"></button>
+                <button class="team-analytics-hotswap-slot-edit"><ion-icon name="pencil"></ion-icon></button>
+                <button class="team-analytics-hotswap-slot"></button>
+                <button class="team-analytics-hotswap-slot-edit"><ion-icon name="pencil"></ion-icon></button>
+                <button class="team-analytics-hotswap-slot"></button>
+                <button class="team-analytics-hotswap-slot-edit"><ion-icon name="pencil"></ion-icon></button>
+                <button class="team-analytics-hotswap-slot"></button>
+                <button class="team-analytics-hotswap-slot-edit"><ion-icon name="pencil"></ion-icon></button>
+                <button class="team-analytics-hotswap-slot"></button>
+                <button class="team-analytics-hotswap-slot-edit"><ion-icon name="pencil"></ion-icon></button>
+                <button class="team-analytics-hotswap-slot"></button>
+                <button class="team-analytics-hotswap-slot-edit"><ion-icon name="pencil"></ion-icon></button>
+            </h3>
+            <div class="info">
+                <div>
+                    <h3>Auto</h3>
+                    <div>
+                        <table id="team-analytics-auto-table"></table>
+                    </div>
+                </div>
+                <div>
+                    <h3>Teleop</h3>
+                    <div>
+                        <table id="team-analytics-teleop-table"></table>
+                    </div>
+                </div>
+                <div>
+                    <h3>Total</h3>
+                    <div>
+                        <table id="team-analytics-total-table"></table>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div style="background-color:var(--g2);">
+                    <h3>Endgame</h3>
+                    <div>
+                        <table id="team-analytics-endgame-table"></table>
+                    </div>
+                </div>
+                <div style="background-color:var(--r2);">
+                    <h3>Scores</h3>
+                    <div>
+                        <table id="team-analytics-scores-table"></table>
+                    </div>
+                </div>
+                <div style="background-color:var(--b2);">
+                    <h3>Miscellaneous</h3>
+                    <div>
+                        <table id="team-analytics-misc-table"></table>
+                    </div>
+                </div>
+                <div>
+                    <h3>API</h3>
+                    <div>
+                        <table id="team-analytics-api-table"></table>
+                    </div>
+                </div>
+            </div>
+            <div class="graph">
+                <h3>Graph</h3>
+                <div class="content" id="team-analytics-graph"></div>
+            </div>
+            <div class="info">
+                <div>
+                    <h3>Notes</h3>
+                    <div>
+                        <table id="team-analytics-notes-table"></table>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div>
+                    <h3>Pit Scouting</h3>
+                    <div id="team-analytics-pit-data"></div>
+                </div>
+            </div>
+            <div id="team-analytics-matches"></div>
+        </div>
+        <div id="match-analytics-page" class="page">
+            <table id="match-analytics-table"></table>
+        </div>
+        <div id="pit-data-page" class="page">
+        </div>
+        <div id="sort-page" class="page">
+            <a target="_blank" id="sort-download">Download</a>
+            <table id="sort-table">
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="pick-list-page" class="page">
+            <h3 class="editable">
+                <button id="pick-list-name-edit"><ion-icon name="pencil"></ion-icon></button>
+                <span>Name:</span>
+                <span id="pick-list-name"></span>
+            </h3>
+            <!-- <h3 class="editable">
+                <button id="pick-list-edit-pwd"><ion-icon name="pencil"></ion-icon></button>
+                <span>PickList Password:</span>
+                <span id="pick-list-pwd"></span>
+            </h3> -->
+            <div class="tab-nav">
+                <button id="pick-list-final-ranking">Final Ranking</button>
+                <button id="pick-list-your-vote">Your Vote</button>
+            </div>
+            <div class="nav">
+                <button id="pick-list-post">Cast Vote</button>
+                <button id="pick-list-del">Remove Vote</button>
+            </div>
+            <div id="pick-list-content" class="content"></div>
+        </div>
+        <div id="api-page" class="page">
+            <header>
+                <button id="api-save">Save</button>
+                <input placeholder="Path" id="api-path">
+            </header>
+            <textarea spellcheck="false" id="api-input"></textarea>
+            <pre id="api-display">
+                <code class="language-json" id="api-display-content"></code>
+            </pre>
+        </div>
+        <div id="nav">
+            <button id="refresh"><ion-icon name="refresh"></ion-icon></button>
+            <button id="server-config">Server Config</button>
+            <button id="master-list">Master Listing</button>
+            <button id="team-analytics">Team Analytics</button>
+            <button id="match-analytics">Match Analytics</button>
+            <button id="pit-data">Pit Data</button>
+            <button id="sort">Sort</button>
+            <button id="pick-list">Pick List</button>
+            <button id="api">API</button>
+        </div>
+        <script type="module" src="./ionicons/dist/ionicons/ionicons.esm.js"></script>
+        <script type="module" nomodule="true" src="./ionicons/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
